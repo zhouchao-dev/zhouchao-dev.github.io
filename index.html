@@ -147,6 +147,7 @@
 
       .contact-grid {
         display: grid;
+        width: 700px;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         margin: 25px 0;
@@ -162,6 +163,29 @@
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
         transition: all 0.3s ease;
+      }
+
+      .contact-item-blog {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 700px;
+        padding: 12px 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .contact-item-blog:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .contact-item-blog i {
+        font-size: 18px;
+        color: #0d6eff;
+        width: 20px;
       }
 
       .contact-item:hover {
@@ -184,7 +208,7 @@
 
       .blog-link:hover {
         color: #e74c3c;
-        border-bottom: 1px solid #e74c3c;
+        border-bottom: 1px solid #ff1900;
       }
 
       .personal-summary {
@@ -369,7 +393,7 @@
       }
 
       .project-card:hover {
-        transform: translateY(-3px);
+        transform: translateY(-10px);
       }
 
       .project-card::before {
@@ -534,34 +558,33 @@
               </div>
               <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <span>邮箱：2163182959@qq.com</span>
+                <span
+                  >邮箱：
+                  <a style="color: #0026ff">YoLoZC@outlook.com</a>
+                </span>
               </div>
               <div class="contact-item">
                 <i class="fas fa-birthday-cake"></i>
                 <span>年龄：23岁</span>
               </div>
               <div class="contact-item">
-                <i class="fas fa-blog"></i>
-                <span
-                  >博客：
-                  <a
-                    href="https://blog.csdn.net/2301_78704584"
-                    target="_blank"
-                    class="blog-link"
-                    style="color: #0026ff"
-                  >
-                    https://blog.csdn.net/2301_78704584
-                  </a>
-                </span>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-graduation-cap"></i>
-                <span>学历：全日制本科</span>
-              </div>
-              <div class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>地点：重庆市</span>
               </div>
+            </div>
+            <div class="contact-item-blog">
+              <i class="fas fa-blog"></i>
+              <span
+                >博客：
+                <a
+                  href="https://blog.csdn.net/2301_78704584"
+                  target="_blank"
+                  class="blog-link"
+                  style="color: #0026ff"
+                >
+                  https://blog.csdn.net/2301_78704584
+                </a>
+              </span>
             </div>
           </div>
 
