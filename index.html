@@ -444,172 +444,287 @@
         font-size: 14px;
       }
 
-      /* 响应式设计 */
-      @media (max-width: 768px) {
-        body {
-          padding: 10px;
-          font-size: 14px;
-          line-height: 1.6;
-        }
-        
-        .resume-container {
-          border-radius: 15px;
-          margin: 10px auto;
-        }
-        
-        .header {
-          padding: 25px 20px;
-        }
-        
-        .header-content {
-          grid-template-columns: 1fr;
-          text-align: center;
-          gap: 20px;
-        }
-        
-        .photo {
-          width: 120px;
-          height: 150px;
-          margin: 0 auto;
-        }
-        
-        .position {
-          font-size: 24px;
-          margin-bottom: 15px;
-        }
-        
-        .position::after {
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80px;
-          background: linear-gradient(90deg, #e74c3c, #f39c12);
-        }
-        
-        .contact-grid {
-          grid-template-columns: 1fr;
-          gap: 10px;
-        }
-        
-        .contact-item {
-          padding: 10px;
-          justify-content: center;
-        }
-        
-        /* 教育背景头部布局调整 */
-        .education-header {
-          flex-direction: column;
-          gap: 10px;
-          text-align: center;
-        }
-        
-        .school, .major, .duration {
-          text-align: center;
-          margin: 0;
-          width: 100%;
-        }
-        
-        .duration {
-          width: auto;
-          display: inline-block;
-        }
-        
-        /* 技能网格调整 */
-        .skills-grid {
-          grid-template-columns: 1fr;
-          gap: 15px;
-        }
-        
-        .skill-category {
-          padding: 20px;
-        }
-        
-        /* 主要内容区域调整 */
-        .main-content {
-          padding: 20px;
-        }
-        
-        .section {
-          margin-bottom: 30px;
-        }
-        
-        .section-title {
-          font-size: 20px;
-          padding-left: 15px;
-          margin-bottom: 20px;
-        }
-        
-        /* 项目卡片调整 */
-        .project-card {
-          padding: 20px;
-        }
-        
-        .project-title {
-          font-size: 18px;
-          flex-direction: column;
-          gap: 8px;
-          text-align: center;
-        }
-        
-        .tech-tag {
-          font-size: 12px;
-          padding: 4px 12px;
-          margin-right: 8px;
-          margin-bottom: 6px;
-        }
-        
-        /* 调整技术栈显示 */
-        .tech-stack {
-          padding: 12px;
-        }
-        
-        .tech-item {
-          padding-left: 20px;
-          font-size: 13px;
-        }
-        
-        .tech-item::before {
-          left: 8px;
-        }
-        
-        /* 个人总结调整 */
-        .personal-summary {
-          padding: 12px;
-          font-size: 13px;
-        }
-      }
+/* 响应式设计 - 完全重写手机端布局 */
+@media (max-width: 768px) {
+    body {
+        padding: 8px;
+        font-size: 14px;
+        line-height: 1.5;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .resume-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .header {
+        padding: 20px 15px;
+        background: linear-gradient(135deg, #4ca3fa 0%, #b1abab 100%);
+    }
+    
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .photo {
+        width: 100px;
+        height: 120px;
+        margin: 0 auto 15px;
+        order: -1; /* 照片移到最上面 */
+    }
+    
+    .position {
+        font-size: 22px;
+        margin-bottom: 15px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .position::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        background: linear-gradient(90deg, #e74c3c, #f39c12);
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin: 15px 0;
+    }
+    
+    .contact-item {
+        padding: 10px 8px;
+        justify-content: flex-start;
+        font-size: 13px;
+    }
+    
+    .contact-item i {
+        font-size: 16px;
+        min-width: 20px;
+    }
+    
+    /* 教育背景完全重写 */
+    .education-header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    
+    .school, .major, .duration {
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        font-size: 16px;
+    }
+    
+    .school {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2c3e50;
+    }
+    
+    .major {
+        font-size: 16px;
+        color: #5d6d7e;
+    }
+    
+    .duration {
+        font-size: 14px;
+        background: rgba(52, 152, 219, 0.1);
+        padding: 6px 12px;
+        border-radius: 15px;
+        display: inline-block;
+        width: auto;
+        margin: 5px auto;
+    }
+    
+    /* 技能网格完全重写 */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .skill-category {
+        padding: 15px;
+        margin-bottom: 0;
+    }
+    
+    .skill-header {
+        margin-bottom: 15px;
+    }
+    
+    .skill-header h4 {
+        font-size: 16px;
+    }
+    
+    .skill-item {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+        padding-left: 20px;
+    }
+    
+    /* 主要内容区域调整 */
+    .main-content {
+        padding: 20px 15px;
+    }
+    
+    .section {
+        margin-bottom: 25px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+        padding-left: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .section-title::before {
+        width: 4px;
+        height: 20px;
+    }
+    
+    /* 项目卡片完全重写 */
+    .projects-grid {
+        gap: 20px;
+    }
+    
+    .project-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .project-title {
+        font-size: 16px;
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .tech-stack {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .tech-tag {
+        font-size: 11px;
+        padding: 3px 8px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .core-tech {
+        margin: 15px 0;
+    }
+    
+    .core-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .tech-item {
+        padding-left: 18px;
+        font-size: 12px;
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+    
+    .tech-item::before {
+        left: 6px;
+        font-size: 14px;
+    }
+    
+    .project-result {
+        padding: 15px;
+        font-size: 12px;
+        margin-top: 15px;
+    }
+    
+    .gpa-badge {
+        font-size: 12px;
+        padding: 6px 15px;
+        display: block;
+        width: fit-content;
+        margin: 10px auto;
+    }
+    
+    /* 分割线调整 */
+    .section-divider {
+        margin: 20px 0;
+    }
+    
+    /* 确保所有内容不超出屏幕 */
+    * {
+        max-width: 100%;
+    }
+    
+    img, table, div, section {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
 
-      /* 超小屏幕适配 */
-      @media (max-width: 480px) {
-        body {
-          padding: 5px;
-          line-height: 1.5;
-        }
-        
-        .header {
-          padding: 20px 15px;
-        }
-        
-        .photo {
-          width: 100px;
-          height: 130px;
-        }
-        
-        .position {
-          font-size: 20px;
-        }
-        
-        .main-content {
-          padding: 15px;
-        }
-        
-        .project-card, .skill-category {
-          padding: 15px;
-        }
-        
-        .section-title {
-          font-size: 18px;
-        }
-      }
+/* 超小屏幕额外优化 */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+        font-size: 13px;
+    }
+    
+    .resume-container {
+        border-radius: 10px;
+    }
+    
+    .header {
+        padding: 15px 10px;
+    }
+    
+    .photo {
+        width: 90px;
+        height: 110px;
+    }
+    
+    .position {
+        font-size: 20px;
+    }
+    
+    .main-content {
+        padding: 15px 10px;
+    }
+    
+    .contact-item {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+    
+    .skill-category, .project-card {
+        padding: 12px;
+    }
+    
+    .section-title {
+        font-size: 16px;
+    }
+}
+
+/* 防止横向滚动 */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
 
       /* 装饰元素 */
       .accent-color {
@@ -894,3 +1009,4 @@
     </script>
   </body>
 </html>
+
